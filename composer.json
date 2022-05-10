@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "2.*",
+        "symfony/framework-bundle": "5.*",
         "imagine/Imagine": "v0.4.1"
     },
     "require-dev": {
