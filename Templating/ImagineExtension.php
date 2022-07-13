@@ -4,8 +4,10 @@ namespace Avalanche\Bundle\ImagineBundle\Templating;
 
 use Avalanche\Bundle\ImagineBundle\Imagine\CachePathResolver;
 use Symfony\Component\Filesystem\Filesystem;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
-class ImagineExtension extends \Twig_Extension
+class ImagineExtension extends AbstractExtension
 {
     /**
      * @var Avalanche\Bundle\ImagineBundle\Imagine\CachePathResolver
@@ -29,7 +31,7 @@ class ImagineExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'apply_filter' => new \Twig_SimpleFilter('apply_filter', [$this, 'applyFilter']),
+            new TwigFilter('apply_filter', [$this, 'applyFilter']),
         );
     }
 
